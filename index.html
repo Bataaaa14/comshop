@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel Playground Computer Cafe</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0b1220;
+    color: #e5e7eb;
+    line-height: 1.5;
+}
+
+/* HEADER */
+header {
+    background: rgba(17, 24, 39, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1f2937;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-family: "Orbitron", sans-serif;
+    color: #38bdf8;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: #f3f4f6;
+    border-left: 4px solid #38bdf8;
+    padding-left: 12px;
+    letter-spacing: 1px;
+}
+
+/* CARDS */
+.card {
+    background: linear-gradient(145deg, #111827, #0f172a);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #1f2937;
+    text-align: center;
+    transition: 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.3);
+}
+
+.card h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* PRICING IMAGES */
+.pricing img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* GRIDS */
+.pricing,
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+/* PC GRID */
+.pc-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.pc-row h3 {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 12px;
+    color: #38bdf8;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+/* ROW GRID */
+.row-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+}
+
+/* PC BOX */
+.pc {
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.pc:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
+
+/* STATUS */
+.available {
+    background: linear-gradient(145deg, #16a34a, #15803d);
+}
+
+.occupied {
+    background: linear-gradient(145deg, #dc2626, #991b1b);
+}
+
+/* SMALL TEXT */
+.pc small {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #0f172a;
+    border-top: 1px solid #1f2937;
+    margin-top: 40px;
+    color: #9ca3af;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .row-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .row-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome Admin!</h1>
+</header>
+
+<section class="section" id="pricing">
+    <h2>Pricing</h2>
+
+    <div class="pricing">
+
+        <div class="card">
+            <img src="images/basic.jpg" />
+            <h3>Basic</h3>
+            <p>₱20 / hour</p>
+        </div>
+
+        <div class="card">
+            <img src="images/gaming.jpg" />
+            <h3>Gaming PC</h3>
+            <p>₱40 / hour</p>
+        </div>
+
+        <div class="card">
+            <img src="images/vip.jpg" />
+            <h3>VIP Setup</h3>
+            <p>₱60 / hour</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PC GRID (NO IMAGES HERE ANYMORE) -->
+<section class="section" id="pcs">
+    <h2>PC Availability</h2>
+    <div class="pc-grid" id="pcGrid"></div>
+</section>
+
+<section class="section" id="services">
+    <h2>Services</h2>
+    <div class="services">
+        <div class="card">Gaming Accounts</div>
+        <div class="card">Franchising</div>
+        <div class="card">Food and Drinks</div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="card">
+        <p>📍 Pixel Playground, Dasmarinas, Cavite</p>
+        <p>📞 0967-676-6767</p>
+        <p>📧 pixelplayground@email.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Pixel Playground</p>
+</footer>
+
+<script>
+
+const pcGrid = document.getElementById("pcGrid");
+
+const pcs = [];
+
+const TIME_30 = 30 * 60;
+const TIME_60 = 60 * 60;
+
+function getType(index) {
+    if (index < 10) return "BASIC";
+    if (index < 20) return "GAMING";
+    return "VIP";
+}
+
+function formatTime(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+// 🧾 RECEIPT (TIME ONLY)
+function showReceipt(pcIndex, type, usedSeconds) {
+
+    const usedMinutes = Math.floor(usedSeconds / 60);
+
+    alert(
+`🧾 RECEIPT
+
+PC: ${pcIndex + 1}
+Tier: ${type}
+
+Total Time Used: ${usedMinutes} mins`
+    );
+}
+
+function updateTimers() {
+    pcs.forEach(pc => {
+        if (pc.time > 0) {
+            pc.time--;
+
+            if (pc.time <= 0) pc.time = 0;
+        }
+    });
+
+    render();
+}
+
+function openMenu(index) {
+    const pc = pcs[index];
+    const type = getType(index);
+
+    const choice = prompt(
+`PC ${index + 1} (${type})
+Current time: ${formatTime(pc.time)}
+
+Choose action:
+1 - Add 30 mins
+2 - Add 1 hour
+3 - Log out`
+    );
+
+    switch (choice) {
+
+        case "1":
+            pc.time += TIME_30;
+            pc.used = (pc.used || 0) + TIME_30;
+            break;
+
+        case "2":
+            pc.time += TIME_60;
+            pc.used = (pc.used || 0) + TIME_60;
+            break;
+
+        case "3":
+            const usedTime = pc.used || 0;
+
+            showReceipt(index, type, usedTime);
+
+            pc.time = 0;
+            pc.used = 0;
+            break;
+    }
+
+    render();
+}
+
+function render() {
+    pcGrid.innerHTML = "";
+
+    const rows = [
+        { name: "BASIC (PC 1–10)", start: 0, color: "#22c55e" },
+        { name: "GAMING (PC 11–20)", start: 10, color: "#38bdf8" },
+        { name: "VIP (PC 21–30)", start: 20, color: "#f59e0b" }
+    ];
+
+    rows.forEach(row => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("pc-row");
+
+        const title = document.createElement("h3");
+        title.textContent = row.name;
+        wrapper.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.classList.add("row-grid");
+
+        for (let i = row.start; i < row.start + 10; i++) {
+            const pc = pcs[i];
+
+            const div = document.createElement("div");
+            div.classList.add("pc");
+
+            const active = pc.time > 0;
+
+            div.style.border = `2px solid ${row.color}`;
+
+            if (active) {
+                div.classList.add("occupied");
+                div.innerHTML = `
+                    PC ${i + 1}
+                    <small>${formatTime(pc.time)}</small>
+                `;
+            } else {
+                div.classList.add("available");
+                div.innerHTML = `
+                    PC ${i + 1}
+                    <small>Available</small>
+                `;
+            }
+
+            div.onclick = () => openMenu(i);
+
+            grid.appendChild(div);
+        }
+
+        wrapper.appendChild(grid);
+        pcGrid.appendChild(wrapper);
+    });
+}
+
+// INIT 30 PCS
+for (let i = 0; i < 30; i++) {
+    pcs.push({
+        time: 0,
+        used: 0
+    });
+}
+
+render();
+setInterval(updateTimers, 1000);
+
+</script>
+
+</body>
+</html>
